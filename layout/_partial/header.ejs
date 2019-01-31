@@ -53,14 +53,16 @@
             <% } %>
         </a>
         <div class="navbar-menu">
-            <a <% if (navSlug == 'category') { %>class="current"<% } %> href="/archives">分类</a>
-            <a <% if (navSlug == 'timeline') { %>class="current"<% } %> href="/timeline">归档</a>
+            <% _.forIn(theme.menu, function(value, key) { %>
+            <a href="<%- url_for(value) %>"><%= __('menu.' + key) %></a>
+            <% }); %>
         </div>
         <div class="navbar-mobile-menu" onclick="">
             <span class="icon-menu cross"><span class="middle"></span></span>
             <ul>
-                <li><a <%if(navSlug == 'category'){%>class="current"<%}%> href="/archives">分类</a></li>
-                <li><a <%if(navSlug == 'timeline'){%>class="current"<%}%> href="/timeline">归档</a></li>
+                <% _.forIn(theme.menu, function(value, key) { %>
+                <li><a href="<%- url_for(value) %>"><%= __('menu.' + key) %></a></li>
+                <% }); %>
             </ul>
         </div>
     </div>

@@ -5,6 +5,13 @@ favicon: /images/favicon.png
 iosicon: /images/apple-touch-icon.png
 since: 2018
 
+# menu
+menu:
+  categroies: /categories
+  archives: /archives
+  links: /links
+  about: /about
+
 # social
 social:
   weibo: /
