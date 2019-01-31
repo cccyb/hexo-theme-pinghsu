@@ -93,4 +93,31 @@
 	</div>
 </div>
 
+<% if (theme.relatedPosts && relatedPosts(page, 6).length != 0) { %>
+<div class="related-post-lists">
+	<div class="post-lists">
+		<div class="post-lists-body">
+		<% relatedPosts(page, 6).forEach(function(relatedPost){ %>
+			<div class="post-list-item">
+				<div class="post-list-item-container">
+					<div class="item-label">
+						<div class="item-title"><a href="<%= url_for(relatedPost.path) %>"><%= relatedPost.title %></a></div>
+						<div class="item-meta clearfix">
+							<div class="item-meta-date" style="color: #5f5f5f;"><%= relatedPost.date.format('MMM DD, YYYY') %></div>
+							<div class="item-meta-ico <%= getPostIcon(relatedPost.icon) %>" style="background: url(/images/bg-ico.png) no-repeat;background-size: 40px auto;"></div>
+                            <div class="item-meta-cat">
+                                <% relatedPost.categories.forEach(function(category) { %>
+                                <a href="<%- url_for(category.path) %>"><%= category.name %></a>
+                                <% }); %>
+                            </div>
+                        </div>
+					</div>
+				</div>
+			</div>
+		<% }); %>
+		</div>
+	</div>
+</div>
+<% } %>
+
 <%- partial('_partial/footer') %>
