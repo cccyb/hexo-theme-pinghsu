@@ -1,0 +1,91 @@
+<%- partial('_partial/header', { 
+    title: page.title, 
+    bgColor: 'bg-white'
+}) %>
+
+<% if (theme.showPostThumb) { %>
+<% if (page.thumb) { %>
+<div class="post-header-thumb">
+	<div class="post-header-thumb-op" style="background-image:url(<%= page.thumb %>);"></div>
+	<div class="post-header-thumb-cover">
+		<div class="post-header-thumb-container">
+			<div class="post-header-thumb-title">
+				<%= page.title %>
+			</div>
+			<div class="post-header-thumb-meta">
+				<time datetime="<%= page.date.unix() %>" itemprop="datePublished">Published on <%- page.date.format('MMM DD, YYYY') %><% if (page.categories.length != 0) { %> in <% } %></time><% page.categories.forEach(function(category) { %><a href="<%- url_for(category.path) %>"><%= category.name %></a><% }); %>
+			</div>
+			<div class="post-tags">
+				<% if (page.tags.length != 0) { %>
+				<% page.tags.forEach(function(tag){ %>
+                <a href="<%- url_for(tag.path) %>>"><%= tag.name %></a>
+                <% }); %>
+				<% } %>
+			</div>
+		</div>
+	</div>
+</div>
+<% } else { %>
+<div class="post-header-thumb">
+	<div class="post-header-thumb-op" style="background-image:url(<%= randPostThumb() %>);"></div>
+	<div class="post-header-thumb-cover">
+		<div class="post-header-thumb-container">
+			<div class="post-header-thumb-title">
+				<%= page.title %>
+			</div>
+			<div class="post-header-thumb-meta">
+				<time datetime="<%= page.date.unix() %>" itemprop="datePublished">Published on <%= page.date.format('MMM DD, YYYY') %><% if (page.categories.length != 0) { %> in <% } %></time><% page.categories.forEach(function(category) { %><a href="<%- url_for(category.path) %>"><%= category.name %></a><% }); %>
+			</div>
+			<div class="post-tags">
+				<% if (page.tags.length != 0) { %>
+				<% page.tags.forEach(function(tag){ %>
+                <a href="<%- url_for(tag.path) %>>"><%= tag.name %></a>
+                <% }); %>
+				<% } %>
+			</div>
+		</div>
+	</div>
+</div>
+<% } %>
+<% } %>
+<article class="main-content <% if (theme.showPostThumb) { %>post-page<% } else { %>page-page<% } %>" itemscope itemtype="http://schema.org/Article">
+	<div class="post-header">
+		<h1 class="post-title" itemprop="name headline">
+			<%= page.title %>
+		</h1>
+		<div class="post-data">
+            <time datetime="<%= page.date.unix() %>" itemprop="datePublished">Published on <%- page.date.format('MMM DD, YYYY') %><% if (page.categories.length != 0) { %> in <% } %></time><% page.categories.forEach(function(category) { %><a href="<%- url_for(category.path) %>"><%= category.name %></a><% }); %>
+		</div>
+	</div>
+	<div id="post-content" class="post-content" itemprop="articleBody">
+		<p class="post-tags">
+            <% if (page.tags.length != 0) { %>
+            <% page.tags.forEach(function(tag){ %>
+            <a href="<%- url_for(tag.path) %>>"><%= tag.name %></a>
+            <% }); %>
+            <% } %>
+        </p>
+		<%- page.content %>
+		<p class="post-info">
+			本文由 <a href="<%= config.url %>"><%= config.author %></a> 创作，采用 <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="external nofollow">知识共享署名4.0</a> 国际许可协议进行许可<br>本站文章除注明转载/出处外，均为本站原创或翻译，转载前请务必署名<br>最后编辑时间为: <%= page.updated.format('MMM DD, YYYY hh:mm a') %>
+		</p>
+	</div>
+</article>
+<div id="post-bottom-bar" class="post-bottom-bar">
+	<div class="bottom-bar-inner">
+		<div class="bottom-bar-items social-share left">
+			<span class="bottom-bar-item">Share : </span>
+			<span class="bottom-bar-item bottom-bar-facebook"><a href="https://www.facebook.com/sharer/sharer.php?u=<%= url %>" target="_blank" title="<%= page.title %>" rel="nofollow">facebook</a></span>
+			<span class="bottom-bar-item bottom-bar-twitter"><a href="https://twitter.com/intent/tweet?url=<%= page.permalink %>&text=<%= page.title %>" target="_blank" title="<%= page.title %>" rel="nofollow">Twitter</a></span>
+			<span class="bottom-bar-item bottom-bar-weibo"><a href="http://service.weibo.com/share/share.php?url=<%= page.link %>&amp;title=<%= page.title %>" target="_blank" title="<%= page.title %>" rel="nofollow">Weibo</a></span>
+			<span class="bottom-bar-item bottom-bar-qrcode"><a href="//pan.baidu.com/share/qrcode?w=300&amp;h=300&amp;url=<%= url %>" target="_blank" rel="nofollow">QRcode</a></span>
+		</div>
+		<div class="bottom-bar-items right">
+			
+			<span class="bottom-bar-item"><a href="#footer">↓</a></span>
+			<span class="bottom-bar-item"><a href="#">↑</a></span>
+		</div>
+	</div>
+</div>
+
+<%- partial('_partial/footer') %>
