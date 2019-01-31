@@ -28,7 +28,13 @@
 						<p>&copy; <%= theme.since %>-<%- date(Date.now(), 'YYYY') %> <a href="<%= config.url %>"><%= config.title %></a></p>
 					</div>
 				</div>
-			</div>
+            </div>
+            <div class="meta-item meta-posts">
+                <h3 class="meta-title">RECENT POSTS</h3>
+                <% site.posts.limit(8).sort({date: -1}).forEach(function(post) { %>
+                <li><a href="<%- url_for(post.path) %>"><%= post.title %></a></li>
+                <% }) %>
+            </div>
 		</div>
 	</div>
 </footer>
