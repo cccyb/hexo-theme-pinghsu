@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <% if (theme.dnsPrefetch == 'true') { %>
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+    <% if (theme.adnAdd) { %>
+    <link rel="dns-prefetch" href="<%= theme.cdnAdd %>" />
+    <% } %>
+    <link rel="dns-prefetch" href="//cdn.bootcss.com" />
+    <link rel="dns-prefetch" href="//secure.gravatar.com" />
+    <% } %>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="Cache-Control" content="no-transform"/>
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+    <% if (theme.favicon) { %>
+    <link rel="shortcut icon" href="<%= theme.favicon %>">
+    <% } %>
+    <% if (theme.iosicon) { %>
+    <link rel="apple-touch-icon" href="<%= theme.iosicon %>">
+    <% } %>
+    <title>
+    <% if (title) { %>
+        <%= title %> - <%= config.title %>
+    <% } else { %>
+        <%= config.title %>
+    <% } %>
+    </title>
+    <meta name="keywords" content="<%= theme.keywords %>" />
+    <meta name="description" content="<%= theme.description %>" />
+    <link href="//cdn.bootcss.com/highlight.js/9.10.0/styles/xcode.min.css" rel="stylesheet">
+    <%- css('style.min.css') %>
+    <!--[if lt IE 9]>
+    <script src="//cdn.bootcss.com/html5shiv/r29/html5.min.js"></script>
+    <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body class="<%= bgColor %>" gtools_scp_screen_capture_injected="true">
+<!--[if lt IE 8]>
+<div class="browsehappy" role="dialog">
+    当前网页 <strong>不支持</strong> 你正在使用的浏览器. 为了正常的访问, 请 <a href="http://browsehappy.com/" target="_blank">升级你的浏览器</a>。
+</div>
+<![endif]-->
+<header id="header" class="header bg-white">
+    <div class="navbar-container">
+        <a href="<%= config.url %>" class="navbar-logo">
+            <% if (theme.headerLogoUrl) { %>
+            <img src="<%= theme.headerLogoUrl %>" alt="<%= config.title %>" />
+            <% } else { %>
+            <%= config.title %>
+            <% } %>
+        </a>
+        <div class="navbar-menu">
+            <a <% if (navSlug == 'category') { %>class="current"<% } %> href="/archives">分类</a>
+            <a <% if (navSlug == 'timeline') { %>class="current"<% } %> href="/timeline">归档</a>
+        </div>
+        <div class="navbar-mobile-menu" onclick="">
+            <span class="icon-menu cross"><span class="middle"></span></span>
+            <ul>
+                <li><a <%if(navSlug == 'category'){%>class="current"<%}%> href="/archives">分类</a></li>
+                <li><a <%if(navSlug == 'timeline'){%>class="current"<%}%> href="/timeline">归档</a></li>
+            </ul>
+        </div>
+    </div>
+</header>

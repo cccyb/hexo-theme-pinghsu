@@ -1,0 +1,26 @@
+# site
+headerLogoUrl: /images/logo.png
+footerLogoUrl: /images/logo-hsuping.png
+favicon: /images/favicon.png
+iosicon: /images/apple-touch-icon.png
+since: 2018
+
+# social
+social:
+  weibo: /
+  zhihu: https://www.zhihu.com/people/52c7f85cb2abafde0b78124e21a68002
+  github: /https://github.com/cccyb
+  twitter: /
+
+enablePjax: true
+dnsPrefetch: true
+enableFastClick: true
+postListSwitch: three
+colorBgPosts: true
+showPostThumb: true
+relatedPosts: true
+enableDirectory: true
+enableHighlight: true
+enableMathjax: true
+googleAnalytics:
+cdnAdd:
