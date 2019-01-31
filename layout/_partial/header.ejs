@@ -45,7 +45,7 @@
 <![endif]-->
 <header id="header" class="header bg-white">
     <div class="navbar-container">
-        <a href="<%= config.url %>" class="navbar-logo">
+        <a href="<%= url_for('/') %>" class="navbar-logo">
             <% if (theme.headerLogoUrl) { %>
             <img src="<%= theme.headerLogoUrl %>" alt="<%= config.title %>" />
             <% } else { %>
