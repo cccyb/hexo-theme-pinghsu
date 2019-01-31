@@ -56,7 +56,7 @@
 							<a href="<%- url_for(post.path) %>"><%= post.title %></a>
 						</div>
 						<div class="item-meta">
-							<time datetime="<%= post.date.unix() %>" itemprop="datePublished">Published on <%- date(post.date, 'YYYY/M/D') %> in </time><% post.categories.forEach(function(category) { %><a href="<%- url_for(category.path) %>"><%= category.name %></a><% }); %>
+							<time datetime="<%= post.date.unix() %>" itemprop="datePublished">Published on <%- date(post.date, 'MMM DD, YYYY') %><% if (post.categories.length != 0) { %> in <% } %></time><% post.categories.forEach(function(category) { %><a href="<%- url_for(category.path) %>"><%= category.name %></a><% }); %>
 						</div>
 						<div class="item-meta-hr <%= getPostBgColor(theme.colorBgPosts, post.color, 'deepgrey') %>"></div>
 						<div class="item-content">
