@@ -18,7 +18,7 @@
 			<div class="post-tags">
 				<% if (page.tags.length != 0) { %>
 				<% page.tags.forEach(function(tag){ %>
-                <a href="<%- url_for(tag.path) %>>"><%= tag.name %></a>
+                <a href="<%- url_for(tag.path) %>"><%= tag.name %></a>
                 <% }); %>
 				<% } %>
 			</div>
@@ -39,7 +39,7 @@
 			<div class="post-tags">
 				<% if (page.tags.length != 0) { %>
 				<% page.tags.forEach(function(tag){ %>
-                <a href="<%- url_for(tag.path) %>>"><%= tag.name %></a>
+                <a href="<%- url_for(tag.path) %>"><%= tag.name %></a>
                 <% }); %>
 				<% } %>
 			</div>
@@ -61,7 +61,7 @@
 		<p class="post-tags">
             <% if (page.tags.length != 0) { %>
             <% page.tags.forEach(function(tag){ %>
-            <a href="<%- url_for(tag.path) %>>"><%= tag.name %></a>
+            <a href="<%- url_for(tag.path) %>"><%= tag.name %></a>
             <% }); %>
             <% } %>
         </p>
@@ -81,7 +81,12 @@
 			<span class="bottom-bar-item bottom-bar-qrcode"><a href="//pan.baidu.com/share/qrcode?w=300&amp;h=300&amp;url=<%= url %>" target="_blank" rel="nofollow">QRcode</a></span>
 		</div>
 		<div class="bottom-bar-items right">
-			
+            <% if (page.prev) { %>
+            <span class="bottom-bar-item"><a href="<%- url_for(page.prev.path) %>">←</a></span>
+            <% } %>
+            <% if (page.next) { %>
+            <span class="bottom-bar-item"><a href="<%- url_for(page.next.path) %>">→</a></span>
+            <% } %>
 			<span class="bottom-bar-item"><a href="#footer">↓</a></span>
 			<span class="bottom-bar-item"><a href="#">↑</a></span>
 		</div>
