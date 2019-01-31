@@ -1,9 +1,10 @@
 <%- partial('_partial/header', { 
-    title: '', 
+    title: '归档', 
     bgColor: 'bg-grey'
 }) %>
 
 <div class="main-content archive-page clearfix">
+    <p style="padding-left: 15px;color: #313131">嗯..! 目前共计 <%= page.posts.length %> 篇日志。 继续努力。</p>
     <div class="categorys-item">
         <% if (page.posts.length !== 0) { %>
         <% var archivePosts = [];
