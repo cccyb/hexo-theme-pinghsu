@@ -1,5 +1,5 @@
 var getPostBgColor = function(colorBgPosts, color, defaultColor = 'deepgrey') {
-  if (colorBgPosts === 'true') {
+  if (colorBgPosts) {
     if (color) {
       return `bg-${color}`;
     }

@@ -31,8 +31,10 @@
 						<div class="item-title"><a href="<%- url_for(post.path) %>"><%= post.title %></a></div>
 						<div class="item-meta clearfix">
                             <div class="item-meta-ico <%= getPostIcon(post.icon) %>" style="background: url(/images/bg-ico.png) no-repeat;background-size: 40px auto;"></div>
-							<div class="item-meta-cat">
-                                <a href="/category/<%= post.categories[0] %>"><%= post.categories[0] %></a>
+                            <div class="item-meta-cat">
+                                <% post.categories.forEach(function(category) { %>
+                                <a href="<%- url_for(category.path) %>"><%= category.name %></a>
+                                <% }); %>
                             </div>
 						</div>
 					</div>
@@ -42,7 +44,7 @@
 			<% if (theme.postListSwitch == 'one') { %>
 			<div class="post-onelist-item">
 				<div class="post-onelist-item-container">
-					<a href="<%= post.permalink %>">
+					<a href="<%- url_for(post.path) %>">
 						<% if (post.thumb) { %>
 						<div class="onelist-item-thumb <%= getPostBgColor(theme.colorBgPosts, post.color, 'deepgrey') %>" style="background-image:url(<%= post.thumb %>);"></div>
 						<% } else { %>
@@ -51,10 +53,10 @@
 					</a>
 					<div class="onelist-item-info">
 						<div class="item-title">
-							<a href="<%= post.permalink %>"><%= post.title %></a>
+							<a href="<%- url_for(post.path) %>"><%= post.title %></a>
 						</div>
 						<div class="item-meta">
-							<time datetime="<%= post.date.unix() %>" itemprop="datePublished">Published on <%- date(post.date, 'YYYY/M/D') %></time> in <a href="/category/<%= post.categories[0] %>"><%= post.categories[0] %></a>
+							<time datetime="<%= post.date.unix() %>" itemprop="datePublished">Published on <%- date(post.date, 'YYYY/M/D') %> in </time><% post.categories.forEach(function(category) { %><a href="<%- url_for(category.path) %>"><%= category.name %></a><% }); %>
 						</div>
 						<div class="item-meta-hr <%= getPostBgColor(theme.colorBgPosts, post.color, 'deepgrey') %>"></div>
 						<div class="item-content">
@@ -65,7 +67,7 @@
                             <% } %>
 						</div>
 						<div class="item-readmore">
-							<a href="<%= post.permalink %>"> Continue Reading → </a>
+							<a href="<%- url_for(post.path) %>"> Continue Reading → </a>
 						</div>
 					</div>
 				</div>
