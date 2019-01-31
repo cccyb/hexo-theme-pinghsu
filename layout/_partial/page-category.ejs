@@ -1,0 +1,32 @@
+<%- partial('_partial/header', { 
+    title: '分类', 
+    bgColor: 'bg-grey'
+}) %>
+
+<div class="main-content archive-page clearfix">
+    <% site.categories.forEach(function(category) { %>
+    <div class="categorys-item">
+        <div class="categorys-title">
+            <a href="<%- url_for(category.path) %>"><%= category.name %></a><span> ：<%= category.posts.count() %></span>
+        </div>
+        <div class="post-lists">
+            <div class="post-lists-body">
+                <% category.posts.forEach(function(post) { %>
+                <div class="post-list-item">
+                    <div class="post-list-item-container">
+                        <div class="item-label">
+                            <div class="item-title"><a href="<%- url_for(post.path) %>"><%= post.title %></a></div>
+                            <div class="item-meta clearfix">
+                                <div class="item-meta-date"> <%= post.date.format('MMM DD, YYYY') %> </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <%});%>
+            </div>
+        </div>
+    </div>
+    <%});%>
+</div>
+
+<%- partial('_partial/footer') %>
