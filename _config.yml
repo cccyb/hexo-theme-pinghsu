@@ -12,6 +12,9 @@ menu:
   links: /links
   about: /about
 
+# archive
+archive: month
+
 # social
 social:
   weibo: /

@@ -1,0 +1,43 @@
+<%- partial('_partial/header', { 
+    title: '', 
+    bgColor: 'bg-grey'
+}) %>
+
+<div class="main-content archive-page clearfix">
+    <div class="categorys-item">
+        <% if (page.posts.length !== 0) { %>
+        <% var archivePosts = [];
+            if (theme.archive === 'year') {
+                archivePosts = yearArchivePosts(page.posts);
+            } else {
+                archivePosts = monthArchivePosts(page.posts);
+            }
+        %>
+        <% archivePosts.forEach(function(item) { %>
+        <div class="categorys-title"><%= item.title %></div>
+        <div class="post-lists">
+            <div class="post-lists-body">
+                <% item.list.forEach(function(post) { %>
+                <div class="post-list-item">
+                    <div class="post-list-item-container">
+                        <div class="item-label">
+                            <div class="item-title">
+                                <a href="<%- url_for(post.path) %>"><%= post.title %></a>
+                            </div>
+                            <div class="item-meta clearfix">
+                                <div class="item-meta-date"><%= post.date.format('MMM DD, YYYY') %></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <% }); %>
+            </div>
+        </div>
+        <% }); %>
+        <% } else { %>
+        <p>你还没有书写文章哦，感觉去写一篇吧~</p>
+        <% } %>
+    </div>
+</div>
+
+<%- partial('_partial/footer') %>
