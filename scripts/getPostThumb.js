@@ -18,18 +18,20 @@ const getPostThumb = function(post, theme) {
         return theme.defaultThumb;
     }
     
-    // 4. 如果没有开启默认缩略图或者默认缩略图地址不合法，且开启了随机缩略图选项，则使用/images/thumbs/下的初始默认随机图片
-    if (theme.randomThumb) {
-        return randPostThumb();
-    } else { // 否则缩略图设为空
-        "";
-    }
+    // 4. 如果没有开启默认缩略图或者默认缩略图地址不合法，且开启了随机缩略图选项，则使用/images/thumbs/下的初始默认随机图片，否则为空
+    return randPostThumb(theme);
 }
 
-// 获取随机的默认9张缩略图
-function randPostThumb () {
-    const prefix = '/images/thumbs/';
-    return prefix + randomInt(0, 9) + '.jpg';
+// 获取随机的默认缩略图
+function randPostThumb(theme) {
+    console.log(typeof theme.randomThumb);
+    if (theme.randomThumb === 0) {
+        return "";
+    } else {
+        const prefix = '/images/thumbs/';
+        const number = theme.randomThumb && typeof theme.randomThumb === 'number' ? theme.randomThumb : 18; 
+        return prefix + randomInt(1, number) + '.jpg';
+    }
 };
 
 // 校验url是否是合法，可以是外链，要符合http(s)开头，也可以是source内/images/下的以（jpg | png | jpeg |webp）结尾的图片
