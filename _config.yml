@@ -38,3 +38,10 @@ googleAnalytics:
 cdnAdd:
 defaultThumb: 
 randomThumb: 18 # 0 to disable
+animateWords:
+  - Front-End
+  - JavaScript
+  - HTML & CSS
+  - Node.js
+  - React
+  - passion & love
