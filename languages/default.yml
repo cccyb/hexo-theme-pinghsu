@@ -6,3 +6,20 @@ menu:
   about: 关于我
 
 recentlyPosts: 最近文章
+
+index:
+  readMore: 继续阅读
+
+tags:
+  title: 所有标签
+  count: 目前共计%d标签
+
+archives:
+  title: 嗯..! 目前共计 %d 篇日志。 继续努力~
+  empty: 你还没有书写文章哦，赶紧去写一篇吧~
+
+categories:
+  empty: 你还没有分类哦，赶紧去给你的文章加上分类吧~
+
+archive:
+  empty: 没有找到内容，请换别的关键字进行检索~

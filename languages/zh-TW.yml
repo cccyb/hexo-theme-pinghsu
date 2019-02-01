@@ -6,3 +6,20 @@ menu:
   about: 關於我
 
 recentlyPosts: 最近文章
+
+index:
+  readMore: 繼續閱讀
+
+tags:
+  title: 所有標籤
+  count: 目前共計%d標籤
+
+archives:
+  title: 嗯..! 目前共計 %d 篇日誌。 繼續努力~
+  empty: 你還沒有書寫文章哦，趕緊去寫一篇吧~
+
+categories:
+  empty: 你還沒有分類哦，趕緊去給你的文章加上分類吧~
+
+archive:
+  empty: 沒有找到內容，請換別的關鍵詞進行檢索~

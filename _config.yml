@@ -20,14 +20,14 @@ archive: month
 social:
   weibo: /
   zhihu: https://www.zhihu.com/people/52c7f85cb2abafde0b78124e21a68002
-  rss: /
+  rss: /atom.xml
   github: https://github.com/cccyb
   twitter: /
 
 enablePjax: true
 dnsPrefetch: true
 enableFastClick: true
-postListSwitch: three
+postListSwitch: one
 colorBgPosts: true
 showPostThumb: true
 relatedPosts: 

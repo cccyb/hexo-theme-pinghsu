@@ -6,3 +6,20 @@ menu:
   about: 나에 대해서
 
 recentlyPosts: 최근 기사
+
+index:
+  readMore: 계속 읽기
+
+tags:
+  title: 모든 라벨
+  count: 현재 총 %d 개의 태그
+
+archives:
+  title: 흠 ..! 현재 총 %d 개의 로그가 있습니다. 계속 열심히 ~
+  empty: 아직 기사를 작성하지 않았습니다. 가서 기사를 작성하십시오 ~
+
+categories:
+  empty: 당신은 아직 분류하지 않았습니다, 그냥 가서 기사에 분류를 추가하십시오 ~
+
+archive:
+  empty: 내용이 없으므로 다른 키워드를 검색하십시오 ~

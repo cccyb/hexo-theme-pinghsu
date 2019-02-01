@@ -6,8 +6,8 @@
 <div class="main-content page-page">
     <div class="search-page">
         <div class="search-title">
-            <h1>所有标签</h1>
-            <h4>目前共计<%= site.tags.count() %>个标签</h4>
+            <h1><%= __('tags.title') %></h1>
+            <h4><%= __('tags.count', site.tags.count()) %></h4>
         </div>
         <div class="search-tags">
         <% if (site.tags.length !== 0) { %>

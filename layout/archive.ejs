@@ -4,7 +4,7 @@
 }) %>
 
 <div class="main-content archive-page clearfix">
-    <p style="padding-left: 15px;color: #313131">嗯..! 目前共计 <%= page.posts.length %> 篇日志。 继续努力。</p>
+    <p style="padding-left: 15px;color: #313131"><%= __('archives.title', page.posts.length) %></p>
     <div class="categorys-item">
         <% if (page.posts.length !== 0) { %>
         <% var archivePosts = [];
@@ -36,7 +36,7 @@
         </div>
         <% }); %>
         <% } else { %>
-        <p>你还没有书写文章哦，赶紧去写一篇吧~</p>
+        <p><%= __('archives.empty') %></p>
         <% } %>
     </div>
 </div>

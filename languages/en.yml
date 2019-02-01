@@ -6,3 +6,20 @@ menu:
   about: About
 
 recentlyPosts: RECENT POSTS
+
+index:
+  readMore: Continue Reading
+
+tags:
+  title: All Tags
+  count: Currently total %d tags
+
+archives:
+  title: Hmm..! There are currently %d posts in total. keep it up~
+  empty: You haven't written an article yet, just go and write an article~
+
+categories:
+  empty: You haven't classified yet, just go and add a classification to your article~
+
+archive:
+  empty: No content found, please search for another keyword~

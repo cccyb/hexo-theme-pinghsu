@@ -6,3 +6,20 @@ menu:
   about: 私について
 
 recentlyPosts: 最近の記事
+
+index:
+  readMore: 続きを読む
+
+tags:
+  title: すべてのラベル
+  count: 現在合計％dタグ
+
+archives:
+  title: うーん..！現在％d個のログがあります。 頑張ってください〜
+  empty: あなたはまだ記事を書いていません、ただ記事を書きに行ってください〜
+
+categories:
+  empty: まだ分類していません。記事に分類を追加してください〜
+
+archive:
+  empty: コンテンツが見つかりません。別のキーワードで検索してください〜
