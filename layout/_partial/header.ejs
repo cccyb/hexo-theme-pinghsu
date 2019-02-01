@@ -30,7 +30,8 @@
     </title>
     <meta name="keywords" content="<%= theme.keywords %>" />
     <meta name="description" content="<%= theme.description %>" />
-    <link href="//cdn.bootcss.com/highlight.js/9.10.0/styles/xcode.min.css" rel="stylesheet">
+    <% var highlightTheme = theme.highlight.theme || 'atom-one-dark' %>
+    <link href="//cdn.bootcss.com/highlight.js/9.10.0/styles/<%= highlightTheme %>.min.css" rel="stylesheet">
     <%- css('style.min.css') %>
     <!--[if lt IE 9]>
     <script src="//cdn.bootcss.com/html5shiv/r29/html5.min.js"></script>

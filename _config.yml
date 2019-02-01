@@ -30,9 +30,13 @@ enableFastClick: true
 postListSwitch: three
 colorBgPosts: true
 showPostThumb: true
-relatedPosts: true
+relatedPosts: 
+  enable: true
+  limit: 6
 enableDirectory: true
-enableHighlight: true
+highlight:
+  enable: true
+  theme: atom-one-dark
 enableMathjax: true
 googleAnalytics:
 cdnAdd:
@@ -45,3 +49,6 @@ animateWords:
   - Node.js
   - React
   - passion & love
+recentlyPosts:
+  enable: true
+  limit: 8

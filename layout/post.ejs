@@ -93,11 +93,11 @@
 	</div>
 </div>
 
-<% if (theme.relatedPosts && relatedPosts(page, 6).length != 0) { %>
+<% if (theme.relatedPosts.enable && relatedPosts(page, theme.relatedPosts.limit).length != 0) { %>
 <div class="related-post-lists">
 	<div class="post-lists">
 		<div class="post-lists-body">
-		<% relatedPosts(page, 6).forEach(function(relatedPost){ %>
+		<% relatedPosts(page, theme.relatedPosts.limit).forEach(function(relatedPost){ %>
 			<div class="post-list-item">
 				<div class="post-list-item-container">
 					<div class="item-label">
