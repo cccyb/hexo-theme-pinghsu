@@ -1,0 +1,40 @@
+<div class="main-content common-page clearfix">
+    <div class="common-item">
+        <div class="common-title">
+            <% var commonTitle 
+                if (is_category()) {
+                    commonTitle = 'Category : ' + page.category;
+                } else if (is_tag()) {
+                    commonTitle = 'Tag : ' + page.tag;
+                }
+            %>
+            <%= commonTitle %>
+        </div>
+        <div class="post-lists">
+			<div class="post-lists-body">
+                <% if (page.posts) {%>
+				<% page.posts.forEach(function(post) { %>
+				<div class="post-list-item">
+					<div class="post-list-item-container <%= getPostBgColor(theme.colorBgPosts, post.color, 'white') %>">
+						<div class="item-label <%= getPostBgColor(theme.colorBgPosts, post.color, 'white') %>">
+							<div class="item-title"><a href="<%= url_for(post.path) %>"><%= post.title %></a></div>
+							<div class="item-meta clearfix">
+                                <div class="item-meta-ico <%= getPostIcon(post.icon) %>" style="background: url(/images/bg-ico.png) no-repeat;background-size: 40px auto;"></div>
+								<div class="item-meta-date"> <%= post.date.format('MMM DD, YYYY') %> </div>
+							</div>
+						</div>
+					</div>
+				</div>
+                <% }); %>
+                <% } else { %>
+                <div class="post-list-item">没有找到内容,请换别的关键字进行检索</div>
+                <% } %>
+			</div>
+		</div>
+    </div>
+    <% if (page.total > 1) { %>
+    <div class="lists-navigator clearfix">
+    <%- partial('_partial/pagination') %>
+    </div>
+    <% } %>
+</div>
