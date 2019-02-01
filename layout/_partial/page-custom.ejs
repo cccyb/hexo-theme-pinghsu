@@ -1,0 +1,20 @@
+<%- partial('_partial/header', { 
+    title: page.title, 
+    bgColor: 'bg-white'
+}) %>
+
+<article class="main-content page-page">
+	<div class="post-header">
+		<h1 class="post-title" itemprop="name headline">
+			<%= page.title %>
+		</h1>
+		<div class="post-data">
+			<time <%= page.date.unix() %> itemprop="datePublished">Published on <%= page.date.format('MMM DD, YYYY') %></time>
+		</div>
+	</div>
+	<div id="post-content" class="post-content">
+		<%- page.content %>
+	</div>
+</article>
+
+<%- partial('_partial/footer') %>
