@@ -10,7 +10,7 @@
 			<% if (theme.postListSwitch === 'three' || theme.postListSwitch !== 'one') { %>
             <div class="post-list-item">
 				<div class="post-list-item-container">
-					<div class="item-thumb <%= getPostBgColor(theme.colorBgPosts, post.color, 'deepgrey') %>" style="background-image:url(<%= getPostThumb(post, theme.defaultThumb) %>);"></div>
+					<div class="item-thumb <%= getPostBgColor(theme.colorBgPosts, post.color, 'deepgrey') %>" style="background-image:url(<%= getPostThumb(post, theme) %>);"></div>
 					<a href="<%- url_for(post.path) %>">
                         <div class="item-desc">
                             <% if (post.excerpt) { %>
@@ -41,7 +41,7 @@
 			<div class="post-onelist-item">
 				<div class="post-onelist-item-container">
 					<a href="<%- url_for(post.path) %>">
-						<div class="onelist-item-thumb <%= getPostBgColor(theme.colorBgPosts, post.color, 'deepgrey') %>" style="background-image:url(<%= getPostThumb(post, theme.defaultThumb) %>);"></div>
+						<div class="onelist-item-thumb <%= getPostBgColor(theme.colorBgPosts, post.color, 'deepgrey') %>" style="background-image:url(<%= getPostThumb(post, theme) %>);"></div>
 					</a>
 					<div class="onelist-item-info">
 						<div class="item-title">

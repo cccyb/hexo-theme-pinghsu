@@ -1,4 +1,4 @@
-const getPostThumb = function(post, defaultThumb) {
+const getPostThumb = function(post, theme) {
     // 1. 填写了thumb字段
     if (post.thumb && validUrl(post.thumb)) { // 填写了thumb字段且字段地址合法
         return post.thumb;
@@ -14,10 +14,15 @@ const getPostThumb = function(post, defaultThumb) {
     // 如果文章内没有图片，或者有图片，但是地址不合法 => 3
 
     // 3. 如果文章内也没有图片，且启用了默认缩略图，且默认缩略图合法，则使用默认缩略图
-    if (defaultThumb && validUrl(defaultThumb)) {
-        return defaultThumb;
-    } else { // 4. 如果没有开启默认缩略图或者默认缩略图地址不合法，则使用/images/thumbs/下的初始默认随机图片
+    if (theme.defaultThumb && validUrl(theme.defaultThumb)) {
+        return theme.defaultThumb;
+    }
+    
+    // 4. 如果没有开启默认缩略图或者默认缩略图地址不合法，且开启了随机缩略图选项，则使用/images/thumbs/下的初始默认随机图片
+    if (theme.randomThumb) {
         return randPostThumb();
+    } else { // 否则缩略图设为空
+        "";
     }
 }
 

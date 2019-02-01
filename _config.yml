@@ -37,3 +37,4 @@ enableMathjax: true
 googleAnalytics:
 cdnAdd:
 defaultThumb: 
+randomThumb: true
