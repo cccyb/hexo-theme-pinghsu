@@ -25,13 +25,13 @@
                         <p id="chakhsu"></p>
                     	<p>Theme is <a href="https://github.com/cccyb/hexo-theme-pinghsu" target="_blank">Pinghsu</a> by <a href="https://chenyubo.cc/" target="_blank"><%= config.author %></a></p>
 						<p>Powered by <a href="https://hexo.io/" target="_blank" rel="nofollow">hexo</a></p>
-						<p>&copy; <%= theme.since %>-<%- date(Date.now(), 'YYYY') %> <a href="<%= config.url %>"><%= config.title %></a></p>
+						<p>&copy; <%= theme.since %> - <%- date(Date.now(), 'YYYY') %> <a href="<%= config.url %>"><%= config.title %></a></p>
 					</div>
 				</div>
             </div>
             <% if (theme.recentlyPosts.enable) { %>
             <div class="meta-item meta-posts">
-                <h3 class="meta-title">RECENT POSTS</h3>
+                <h3 class="meta-title"><%= __('recentlyPosts') %></h3>
                 <% site.posts.limit(theme.recentlyPosts.limit).sort({date: -1}).forEach(function(post) { %>
                 <li><a href="<%- url_for(post.path) %>"><%= post.title %></a></li>
                 <% }) %>
