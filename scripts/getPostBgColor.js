@@ -1,6 +1,8 @@
+const arr = [ 'blue', 'purple', 'green', 'yellow', 'red', 'orange' ];
+
 var getPostBgColor = function(colorBgPosts, color, defaultColor = 'deepgrey') {
   if (colorBgPosts) {
-    if (color) {
+    if (arr.indexOf(color) >= 0) {
       return `bg-${color}`;
     }
     return 'bg-' + randBgColor();
@@ -9,7 +11,6 @@ var getPostBgColor = function(colorBgPosts, color, defaultColor = 'deepgrey') {
 };
 
 function randBgColor() {
-  const arr = [ 'blue', 'purple', 'green', 'yellow', 'red', 'orange' ];
   return arr[randomInt(0, 5)];
 }
 

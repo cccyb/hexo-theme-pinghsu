@@ -1,12 +1,13 @@
+const arr = ['book', 'game', 'note', 'chat', 'code', 'image', 'web', 'link', 'design', 'lock'];
+
 var getPostIcon = function (icon) {
-  if (icon) {
+  if (arr.indexOf(icon) >= 0) {
     return 'bg-ico-' + icon;
   }
   return 'bg-ico-' + randBgIco();
 };
 
 function randBgIco() {
-  const arr = ['book', 'game', 'note', 'chat', 'code', 'image', 'web', 'link', 'design', 'lock'];
   return arr[randomInt(0, 9)];
 }
 
