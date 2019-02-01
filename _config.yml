@@ -36,3 +36,4 @@ enableHighlight: true
 enableMathjax: true
 googleAnalytics:
 cdnAdd:
+defaultThumb: 

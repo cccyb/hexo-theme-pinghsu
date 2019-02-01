@@ -6,7 +6,7 @@
 <% if (theme.showPostThumb) { %>
 <% if (page.thumb) { %>
 <div class="post-header-thumb">
-	<div class="post-header-thumb-op" style="background-image:url(<%= page.thumb %>);"></div>
+	<div class="post-header-thumb-op" style="background-image:url(<%= getPostThumb(page, theme.defaultThumb) %>);"></div>
 	<div class="post-header-thumb-cover">
 		<div class="post-header-thumb-container">
 			<div class="post-header-thumb-title">
@@ -27,7 +27,7 @@
 </div>
 <% } else { %>
 <div class="post-header-thumb">
-	<div class="post-header-thumb-op" style="background-image:url(<%= randPostThumb() %>);"></div>
+	<div class="post-header-thumb-op" style="background-image:url(<%= getPostThumb(page, theme.defaultThumb) %>);"></div>
 	<div class="post-header-thumb-cover">
 		<div class="post-header-thumb-container">
 			<div class="post-header-thumb-title">

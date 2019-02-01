@@ -7,14 +7,10 @@
 	<div class="post-lists">
 		<div class="post-lists-body">
         <% page.posts.forEach(function(post) { %>
-			<% if (theme.postListSwitch == 'three') { %>
+			<% if (theme.postListSwitch === 'three' || theme.postListSwitch !== 'one') { %>
             <div class="post-list-item">
 				<div class="post-list-item-container">
-					<% if (post.thumb) { %>
-					<div class="item-thumb <%= getPostBgColor(theme.colorBgPosts, post.color, 'deepgrey') %>" style="background-image:url(<%= post.thumb %>);"></div>
-					<% } else { %>
-					<div class="item-thumb <%= getPostBgColor(theme.colorBgPosts, post.color, 'deepgrey') %>" style="background-image:url(<%= randPostThumb() %>);"></div>
-					<% } %>
+					<div class="item-thumb <%= getPostBgColor(theme.colorBgPosts, post.color, 'deepgrey') %>" style="background-image:url(<%= getPostThumb(post, theme.defaultThumb) %>);"></div>
 					<a href="<%- url_for(post.path) %>">
                         <div class="item-desc">
                             <% if (post.excerpt) { %>
@@ -45,11 +41,7 @@
 			<div class="post-onelist-item">
 				<div class="post-onelist-item-container">
 					<a href="<%- url_for(post.path) %>">
-						<% if (post.thumb) { %>
-						<div class="onelist-item-thumb <%= getPostBgColor(theme.colorBgPosts, post.color, 'deepgrey') %>" style="background-image:url(<%= post.thumb %>);"></div>
-						<% } else { %>
-						<div class="onelist-item-thumb <%= getPostBgColor(theme.colorBgPosts, post.color, 'deepgrey') %>" style="background-image:url(<%= randPostThumb() %>);"></div>
-						<% } %>
+						<div class="onelist-item-thumb <%= getPostBgColor(theme.colorBgPosts, post.color, 'deepgrey') %>" style="background-image:url(<%= getPostThumb(post, theme.defaultThumb) %>);"></div>
 					</a>
 					<div class="onelist-item-info">
 						<div class="item-title">
