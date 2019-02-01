@@ -24,7 +24,6 @@ const getPostThumb = function(post, theme) {
 
 // 获取随机的默认缩略图
 function randPostThumb(theme) {
-    console.log(typeof theme.randomThumb);
     if (theme.randomThumb === 0) {
         return "";
     } else {
