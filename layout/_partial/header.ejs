@@ -54,14 +54,14 @@
         </a>
         <div class="navbar-menu">
             <% _.forIn(theme.menu, function(value, key) { %>
-            <a href="<%- url_for(value) %>"><%= __('menu.' + key) %></a>
+            <a href="<%- url_for(value) %>" class="<% if (is_current(value)) { %>current<% } %>"><%= __('menu.' + key) %></a>
             <% }); %>
         </div>
         <div class="navbar-mobile-menu" onclick="">
             <span class="icon-menu cross"><span class="middle"></span></span>
             <ul>
                 <% _.forIn(theme.menu, function(value, key) { %>
-                <li><a href="<%- url_for(value) %>"><%= __('menu.' + key) %></a></li>
+                <li><a href="<%- url_for(value) %>" class="<% if (is_current(value)) { %>current<% } %>"><%= __('menu.' + key) %></a></li>
                 <% }); %>
             </ul>
         </div>

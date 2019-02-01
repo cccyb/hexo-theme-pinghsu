@@ -29,9 +29,10 @@
 					<div class="item-label">
 						<div class="item-title"><a href="<%- url_for(post.path) %>"><%= post.title %></a></div>
 						<div class="item-meta clearfix">
+							<div class="item-meta-date" style="color: #313131; padding-top: 12px;"> <%= post.date.format('MMM DD, YYYY') %> </div>
                             <div class="item-meta-ico <%= getPostIcon(post.icon) %>" style="background: url(/images/bg-ico.png) no-repeat;background-size: 40px auto;"></div>
                             <div class="item-meta-cat">
-                                <% post.categories.forEach(function(category) { %>
+                                <% post.categories.reverse().forEach(function(category) { %>
                                 <a href="<%- url_for(category.path) %>"><%= category.name %></a>
                                 <% }); %>
                             </div>
@@ -55,7 +56,7 @@
 							<a href="<%- url_for(post.path) %>"><%= post.title %></a>
 						</div>
 						<div class="item-meta">
-							<time datetime="<%= post.date.unix() %>" itemprop="datePublished">Published on <%- page.date.format('MMM DD, YYYY') %><% if (post.categories.length != 0) { %> in <% } %></time><% post.categories.forEach(function(category) { %><a href="<%- url_for(category.path) %>"><%= category.name %></a><% }); %>
+							<time datetime="<%= post.date.unix() %>" itemprop="datePublished">Published on <%- post.date.format('MMM DD, YYYY') %><% if (post.categories.length != 0) { %> in <% } %></time><% post.categories.forEach(function(category, index) { %><a href="<%- url_for(category.path) %>"><%= category.name %><% if (index !== post.categories.length - 1) { %> / <% } %></a><% }); %>
 						</div>
 						<div class="item-meta-hr <%= getPostBgColor(theme.colorBgPosts, post.color, 'deepgrey') %>"></div>
 						<div class="item-content">
@@ -75,9 +76,11 @@
         <% }); %>
 		</div>
 	</div>
+    <% if (page.total > 1) { %>
     <div class="lists-navigator clearfix">
-	<%- partial('_partial/pagination') %>
-	</div>
+    <%- partial('_partial/pagination') %>
+    </div>
+    <% } %>
 </div>
 
 <%- partial('_partial/footer') %>

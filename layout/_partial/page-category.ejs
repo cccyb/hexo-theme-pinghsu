@@ -4,6 +4,7 @@
 }) %>
 
 <div class="main-content archive-page clearfix">
+    <% if (site.categories.length > 0) { %>
     <% site.categories.forEach(function(category) { %>
     <div class="categorys-item">
         <div class="categorys-title">
@@ -27,6 +28,9 @@
         </div>
     </div>
     <%});%>
+    <% } else { %>
+    <p>你还没有分类哦，赶紧去给你的文章加上分类吧~</p>
+    <% } %>
 </div>
 
 <%- partial('_partial/footer') %>
