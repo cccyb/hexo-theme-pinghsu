@@ -1,5 +1,7 @@
 ## Pinghsu
 
+![](https://ws1.sinaimg.cn/large/c542ee77ly1fzsfoy2cpkj21i40w4agz.jpg)
+
 本主题移植于[chakhsu](https://github.com/chakhsu)的Typecho主题[pinghsu](https://github.com/chakhsu/pinghsu)，将其基于Hexo进行重写。
 
 引用原作者对主题的一句话介绍：
@@ -8,7 +10,7 @@
 
 非常感谢原作者写出这么精美的主题供我们使用。
 
-## Preview 预览
+## Preview 更多预览
 
 | 首页  -  三栏                                                | 首页  -  单栏                                                |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
