@@ -2,12 +2,22 @@
 	<div class="footer-social">
 		<div class="footer-container clearfix">
 			<div class="social-list">
+                <% if (theme.social.weibo) { %>
 				<a class="social weibo" target="blank" href="<%= theme.social.weibo %>">WEIBO</a>
+                <% } %>
+                <% if (theme.social.zhihu) { %>
                 <a class="social zhihu" target="blank" href="<%= theme.social.zhihu %>">ZHIHU</a>
+                <% } %>
+                <% if (theme.social.rss) { %>
                 <a class="social rss" target="blank" href="<%= theme.social.rss %>">RSS</a>
-				<a class="social github" target="blank" href="<%= theme.social.github %>">GITHUB</a>
+				<% } %>
+                <% if (theme.social.github) { %>
+                <a class="social github" target="blank" href="<%= theme.social.github %>">GITHUB</a>
+                <% } %>
+                <% if (theme.social.twitter) { %>
                 <a class="social twitter" target="blank" href="<%= theme.social.twitter %>">TWITTER</a>
-			</div>
+                <% } %>
+            </div>
 		</div>
 	</div>
 	<div class="footer-meta">
@@ -23,7 +33,7 @@
                     </a>
 					<div class="info-text">
                         <p id="chakhsu"></p>
-                    	<p>Theme is <a href="https://github.com/cccyb/hexo-theme-pinghsu" target="_blank">Pinghsu</a> by <a href="https://chenyubo.cc/" target="_blank"><%= config.author %></a></p>
+                    	<p>Theme is <a href="https://github.com/cccyb/hexo-theme-pinghsu" target="_blank">Pinghsu</a> by <a href="<%= config.url %>" target="_blank"><%= config.author %></a></p>
 						<p>Powered by <a href="https://hexo.io/" target="_blank" rel="nofollow">hexo</a></p>
 						<p>&copy; <%= theme.since %> - <%- date(Date.now(), 'YYYY') %> <a href="<%= config.url %>"><%= config.title %></a></p>
 					</div>
@@ -140,7 +150,7 @@ postDirectoryBuild();
 <script src="//cdn.bootcss.com/highlight.js/9.10.0/highlight.min.js"></script>
 <% } %>
 <% if (theme.enablePjax) { %>
-<%- js('js/instantclick.min.js') %>
+<script src="/js/instantclick.min.js" data-no-instant></script>
 <% } %>
 <% if (theme.enableFastClick) { %>
 <script src="//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js"></script>
@@ -184,9 +194,9 @@ var header = new Headroom(document.getElementById("header"), {
     }
 });
 header.init();
-<% if (!theme.enablePjax || theme.highlight || is_post()) { %>
+<% if (!theme.enablePjax && theme.highlight.enable && is_post()) { %>
 hljs.initHighlightingOnLoad();
-<% } %>
+<% } %> 
 <% if (theme.enableFastClick) { %>
 if ('addEventListener' in document) {
     document.addEventListener('DOMContentLoaded', function() {
@@ -242,7 +252,7 @@ InstantClick.on('change', function(isInitialLoad){
         <% if (theme.enableMathjax) { %>
         if (typeof MathJax !== 'undefined'){MathJax.Hub.Queue(["Typeset",MathJax.Hub]);}
         <% } %>
-    }
+    } 
 });
 InstantClick.init('mousedown');
 </script>
