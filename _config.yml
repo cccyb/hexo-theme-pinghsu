@@ -1,11 +1,16 @@
-# site
-headerLogoUrl: /images/logo.png
-footerLogoUrl: /images/logo-hsuping.png
-favicon: /images/favicon.png
-iosicon: /images/apple-touch-icon.png
-since: 2018
+# ===========================================
+# Site Settings 网站相关设置
+# ===========================================
 
-# menu
+# 网站基础设置
+# 图片需要放置在 themes/pinghsu/source/imagse 下
+headerLogoUrl: # 头部右上角logo图片地址，留空则取网站标题 
+footerLogoUrl: # 底部左下角logo图片地址，留空则取网站标题
+favicon: /images/favicon.png # favicon地址，留空则不设favicon
+iosicon: /images/apple-touch-icon.png # apple touch icon 地址，留空则不设 apple touch icon
+since: 2016 # 站点起始时间
+
+# Menu Setting 菜单设置
 menu:
   categories: /categories
   tags: /tags
@@ -13,42 +18,107 @@ menu:
   links: /links
   about: /about
 
-# archive
-archive: month
+# Archive Setting 归档页设置
+# month: 按月份归档，year: 按年份归档，默认按月份归档
+archive: year
 
-# social
+# Social Setting 社交设置
+# weibo 微博链接
+# zhihu 知乎链接
+# rss rss链接
+# github github链接
+# twitter twitter链接
 social:
   weibo: /
-  zhihu: https://www.zhihu.com/people/52c7f85cb2abafde0b78124e21a68002
+  zhihu: /
   rss: /atom.xml
-  github: https://github.com/cccyb
+  github: /
   twitter: /
 
+# ===========================================
+# Function Setting 功能设置
+# ===========================================
+
+# 是否启用PJAX加速
 enablePjax: true
+
+# 是否启用DNS预解析加速
+# 启用则会对CDN资源和Gravatar进行加速
 dnsPrefetch: true
+
+# 自定义CDN加速地址
+# 若设置，且启用DNS预解析，则会被加速，可以填写图床地址进行图片加载加速，或者加速其他cdn
+cdnAdd: 
+
+# 是否启用移动端点击延迟消除设置
 enableFastClick: true
-postListSwitch: one
-colorBgPosts: true
-showPostThumb: true
+
+# 是否启用文章Mathjax设置
+# 启用则会对内容页进行数学公式渲染，仅支持 $公式$ 和 $$公式$$
+enableMathjax: true
+
+# 谷歌分析代码
+# 填写你从Google Analytics获取到的Universal Analytics跟踪代码，不需要script标签
+googleAnalytics:
+
+# 文章页底部相关文章设置
+# 仅在文章页中生效，文章是根据标签进行相关的
+# enable：是否启用
+# limit：显示文章数量，建议设置不超过6条
 relatedPosts: 
   enable: true
   limit: 6
+
+# 底部最近文章设置
+# enable：是否启用
+# limit：显示数量，建议设置不超过8条
+recentlyPosts:
+  enable: true
+  limit: 8
+
+# ===========================================
+# Appearance Setting 外观设置
+# ===========================================
+
+# 首页文章列表设置
+# 默认三列
+# three: 三列，one：一列
+postListSwitch: three
+
+# 文章色块设置
+# 启用则可以通过文章字段color控制色块颜色，仅支持blue、purple、green、yellow、red
+colorBgPosts: true
+
+# 文章题图设置
+# 启用则在文章页顶部显示缩略图
+showPostThumb: true
+
+# 默认缩略图
+defaultThumb: 
+
+# 随机缩略图设置
+# 设为 0 则不使用主题自带的缩略图
+# 不为 0 时表示默认随机缩略图的数量
+randomThumb: 18
+
+# 文章目录设置
+# 文章页右边目录生成，仅在网页宽度大于1000px时显示
 enableDirectory: true
+
+# 代码高亮设置
+# enable：是否启用
+# theme：主题样式css名称，默认使用atom-one-dark主题
 highlight:
   enable: true
   theme: atom-one-dark
-enableMathjax: true
-googleAnalytics:
-cdnAdd:
-defaultThumb: 
-randomThumb: 18 # 0 to disable
+
+# 底部彩色动态词语配置
+# 一个词语一行
 animateWords:
   - Front-End
   - JavaScript
   - HTML & CSS
   - Node.js
   - React
+  - Vue
   - passion & love
-recentlyPosts:
-  enable: true
-  limit: 8
