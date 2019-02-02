@@ -440,7 +440,7 @@ feed:
   icon: icon.png
 ```
 
-具体配置详情见：https://github.com/hexojs/hexo-generator-feed，请自己根据文档按需配置。
+具体配置详情见：[https://github.com/hexojs/hexo-generator-feed](https://github.com/hexojs/hexo-generator-feed) ，请自己根据文档按需配置。
 
 **添加菜单**
 
