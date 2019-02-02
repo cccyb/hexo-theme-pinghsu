@@ -2,10 +2,10 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <% if (theme.dnsPrefetch == 'true') { %>
+    <% if (theme.dnsPrefetch) { %>
     <meta http-equiv="x-dns-prefetch-control" content="on">
-    <% if (theme.adnAdd) { %>
-    <link rel="dns-prefetch" href="<%= theme.cdnAdd %>" />
+    <% if (theme.cdnAdd) { %>
+    <link rel="dns-prefetch" href="//<%= theme.cdnAdd %>" />
     <% } %>
     <link rel="dns-prefetch" href="//cdn.bootcss.com" />
     <link rel="dns-prefetch" href="//secure.gravatar.com" />
