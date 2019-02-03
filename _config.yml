@@ -41,7 +41,8 @@ social:
 # ===========================================
 
 # 是否启用PJAX加速
-enablePjax: true
+# 与网页鼠标点击红心效果和gitalk评论系统会有冲突，建议先关闭，后续待处理这个问题
+enablePjax: false
 
 # 是否启用DNS预解析加速
 # 启用则会对CDN资源和Gravatar进行加速
@@ -116,13 +117,31 @@ highlight:
 # 底部彩色动态词语配置
 # 一个词语一行
 animateWords:
-  - Front-End
-  - JavaScript
-  - HTML & CSS
-  - Node.js
-  - React
-  - Vue
-  - passion & love
-  
+  - Hexo
+  - Theme
+  - Pinghsu
+
 # 不蒜子网站统计
 busuanzi: true
+
+# 网站点击红心效果
+# 与enablePjax冲突，需要关闭enablePjax
+clickLove: true
+
+# gitalk评论系统
+# 与enablePjax冲突，需要关闭enablePjax
+# 配置项具体含义见文档：https://github.com/gitalk/gitalk/blob/master/readme-cn.md
+gitalk:
+  enable: true
+  clientID: 
+  clientSecret: 
+  repo: 
+  owner: 
+  admin: # 如果有多个，一个一行
+    - 
+  id: location.pathname
+  perPage: 15
+  distractionFreeMode: false
+  pagerDirection: last
+  createIssueManually: true
+  enableHotKey: true

@@ -243,6 +243,14 @@ MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
 <% if (theme.busuanzi) { %>
 <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 <% } %>
+<% if (!theme.enablePjax && theme.clickLove) { %>
+<%- js('/js/love.js') %>
+<% } %>
+<% if (theme.gitalk.enable && is_post() && !theme.enablePjax) { %>
+    <%- partial('_partial/comment', { 
+        title: page.title, 
+    }) %>
+    <% } %>
 <% if (theme.enablePjax) { %>
 <script data-no-instant>
 InstantClick.on('change', function(isInitialLoad){
