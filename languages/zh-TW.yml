@@ -23,3 +23,10 @@ categories:
 
 archive:
   empty: 沒有找到內容，請換別的關鍵詞進行檢索~
+
+views:
+  text: 本站總訪問量
+  unit: 次
+vistors: 
+  text: 本站總訪客數
+  unit: 人次

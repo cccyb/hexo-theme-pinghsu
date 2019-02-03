@@ -23,3 +23,10 @@ categories:
 
 archive:
   empty: 내용이 없으므로 다른 키워드를 검색하십시오 ~
+
+views:
+  text: 총 사이트 방문 횟수
+  unit: 회
+vistors: 
+  text: 이 사이트 방문자
+  unit: 명

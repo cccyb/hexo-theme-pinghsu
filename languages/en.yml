@@ -23,3 +23,10 @@ categories:
 
 archive:
   empty: No content found, please search for another keyword~
+
+views:
+  text: Total views
+  unit: times
+vistors: 
+  text: Total vistors
+  unit: m

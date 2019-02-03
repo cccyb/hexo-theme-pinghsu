@@ -23,17 +23,18 @@ menu:
 archive: year
 
 # Social Setting 社交设置
+# 留空则不显示
 # weibo 微博链接
 # zhihu 知乎链接
 # rss rss链接
 # github github链接
 # twitter twitter链接
 social:
-  weibo: /
-  zhihu: /
+  weibo: 
+  zhihu: 
   rss: /atom.xml
-  github: /
-  twitter: /
+  github: 
+  twitter: 
 
 # ===========================================
 # Function Setting 功能设置
@@ -122,3 +123,6 @@ animateWords:
   - React
   - Vue
   - passion & love
+  
+# 不蒜子网站统计
+busuanzi: true

@@ -23,3 +23,10 @@ categories:
 
 archive:
   empty: 没有找到内容，请换别的关键字进行检索~
+
+views:
+  text: 本站总访问量
+  unit: 次
+vistors: 
+  text: 本站访客数
+  unit: 人次

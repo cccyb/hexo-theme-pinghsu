@@ -23,3 +23,10 @@ categories:
 
 archive:
   empty: コンテンツが見つかりません。別のキーワードで検索してください〜
+
+views:
+  text: サイトへの合計訪問回数
+  unit: 回
+vistors: 
+  text: このサイトへの訪問者
+  unit: 人
