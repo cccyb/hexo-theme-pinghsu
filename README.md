@@ -1,6 +1,6 @@
 ## Pinghsu
 
-![](https://ws1.sinaimg.cn/large/c542ee77ly1fzsfoy2cpkj21i40w4agz.jpg)
+![](https://user-images.githubusercontent.com/20245829/52165436-baad8b00-273b-11e9-8ae1-2b2eeaa7163d.png)
 
 本主题移植于[chakhsu](https://github.com/chakhsu)的Typecho主题[pinghsu](https://github.com/chakhsu/pinghsu)，将其基于Hexo进行重写。
 
