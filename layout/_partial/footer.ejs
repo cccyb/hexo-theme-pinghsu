@@ -2,21 +2,9 @@
 	<div class="footer-social">
 		<div class="footer-container clearfix">
 			<div class="social-list">
-                <% if (theme.social.weibo) { %>
-				<a class="social weibo" target="blank" href="<%= theme.social.weibo %>">WEIBO</a>
-                <% } %>
-                <% if (theme.social.zhihu) { %>
-                <a class="social zhihu" target="blank" href="<%= theme.social.zhihu %>">ZHIHU</a>
-                <% } %>
-                <% if (theme.social.rss) { %>
-                <a class="social rss" target="blank" href="<%= theme.social.rss %>">RSS</a>
-				<% } %>
-                <% if (theme.social.github) { %>
-                <a class="social github" target="blank" href="<%= theme.social.github %>">GITHUB</a>
-                <% } %>
-                <% if (theme.social.twitter) { %>
-                <a class="social twitter" target="blank" href="<%= theme.social.twitter %>">TWITTER</a>
-                <% } %>
+                <% Object.entries(theme.social).forEach(function(item) { %>
+                    <a class="social" target="blank" href="<%= item[1] %>"><%= item[0] %></a>
+                <% }) %>
             </div>
 		</div>
 	</div>
@@ -234,11 +222,6 @@ MathJax.Hub.Config({
 MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
 </script>
 <script src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-<% } %>
-<% if (theme.googleAnalytics) { %>
-<script>
-<%= theme.googleAnalytics %>
-</script>
 <% } %>
 <% if (theme.busuanzi) { %>
 <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>

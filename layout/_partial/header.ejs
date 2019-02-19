@@ -15,6 +15,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta http-equiv="Cache-Control" content="no-transform"/>
     <meta http-equiv="Cache-Control" content="no-siteapp"/>
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     <% if (theme.favicon) { %>
     <link rel="shortcut icon" href="<%= theme.favicon %>">
     <% } %>
@@ -40,6 +41,17 @@
     <script src="//cdn.bootcss.com/html5shiv/r29/html5.min.js"></script>
     <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+    <% if (theme.baiduAnalytics) { %>
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?<%= theme.baiduAnalytics %>";
+            var s = document.getElementsByTagName("script")[0]; 
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+    <% } %>
 </head>
 <body class="<%= bgColor %>" gtools_scp_screen_capture_injected="true">
 <!--[if lt IE 8]>

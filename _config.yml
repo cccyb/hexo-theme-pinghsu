@@ -23,26 +23,13 @@ menu:
 archive: year
 
 # Social Setting 社交设置
-# 留空则不显示
-# weibo 微博链接
-# zhihu 知乎链接
-# rss rss链接
-# github github链接
-# twitter twitter链接
 social:
-  weibo: 
-  zhihu: 
-  rss: /atom.xml
-  github: 
-  twitter: 
+  知乎: 
+  Github: 
 
 # ===========================================
 # Function Setting 功能设置
 # ===========================================
-
-# 是否启用PJAX加速
-# 与网页鼠标点击红心效果和gitalk评论系统会有冲突，建议先关闭，后续待处理这个问题
-enablePjax: false
 
 # 是否启用DNS预解析加速
 # 启用则会对CDN资源和Gravatar进行加速
@@ -58,10 +45,6 @@ enableFastClick: true
 # 是否启用文章Mathjax设置
 # 启用则会对内容页进行数学公式渲染，仅支持 $公式$ 和 $$公式$$
 enableMathjax: true
-
-# 谷歌分析代码
-# 填写你从Google Analytics获取到的Universal Analytics跟踪代码，不需要script标签
-googleAnalytics:
 
 # 文章页底部相关文章设置
 # 仅在文章页中生效，文章是根据标签进行相关的
@@ -125,11 +108,9 @@ animateWords:
 busuanzi: true
 
 # 网站点击红心效果
-# 与enablePjax冲突，需要关闭enablePjax
 clickLove: true
 
 # gitalk评论系统
-# 与enablePjax冲突，需要关闭enablePjax
 # 配置项具体含义见文档：https://github.com/gitalk/gitalk/blob/master/readme-cn.md
 gitalk:
   enable: true
@@ -145,3 +126,6 @@ gitalk:
   pagerDirection: last
   createIssueManually: true
   enableHotKey: true
+
+# 百度统计id，填写复 hm.js? 后面那串统计脚本 id
+baiduAnalytics: 
