@@ -1,14 +1,3 @@
----
-title: Pinghsu，A Hexo Theme
-date: 2019/02/02 12:46:25
-categories:
-- Tutorials
-tags:
-- Hexo
-- Theme
-- Pinghsu
-thumb: https://ws1.sinaimg.cn/large/c542ee77ly1fzs83ifsetj20jg0d015w.jpg
----
 ## Pinghsu
 
 ![](https://ws1.sinaimg.cn/large/c542ee77ly1fzsfoy2cpkj21i40w4agz.jpg)
