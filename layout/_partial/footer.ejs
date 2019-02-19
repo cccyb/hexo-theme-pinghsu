@@ -23,10 +23,13 @@
                         <p id="chakhsu"></p>
                     	<p>Theme is <a href="https://github.com/cccyb/hexo-theme-pinghsu" target="_blank">Pinghsu</a> by <a href="<%= config.url %>" target="_blank"><%= config.author %></a></p>
 						<p>Powered by <a href="https://hexo.io/" target="_blank" rel="nofollow">hexo</a></p>
-						<p>&copy; <%= theme.since %> - <%- date(Date.now(), 'YYYY') %> <a href="<%= config.url %>"><%= config.title %></a></p>
+						<p style="margin-top: 10px">&copy; <%= theme.since %> - <%- date(Date.now(), 'YYYY') %> <a href="<%= config.url %>"><%= config.title %></a></p>
                         <% if (theme.busuanzi) { %>
                         <p style="margin-top: 10px"><span id="busuanzi_container_site_pv" style='display:none'><%- __('views.text') %> <span id="busuanzi_value_site_pv"></span> <%- __('views.unit') %></span></p>
                         <p><span id="busuanzi_container_site_uv" style='display:none'><%- __('vistors.text') %> <span id="busuanzi_value_site_uv"></span> <%- __('vistors.unit') %></span></p>
+                        <% } %>
+                        <% if (theme.beian) { %>
+                        <p style="margin-top: 10px"><a href="http://www.miibeian.gov.cn"><%= theme.beian %></a></p>
                         <% } %>
                     </div>
 				</div>
@@ -34,7 +37,7 @@
             <% if (theme.recentlyPosts.enable) { %>
             <div class="meta-item meta-posts">
                 <h3 class="meta-title"><%= __('recentlyPosts') %></h3>
-                <% site.posts.limit(theme.recentlyPosts.limit).sort({date: -1}).forEach(function(post) { %>
+                <% site.posts.sort({date: -1}).limit(theme.recentlyPosts.limit).forEach(function(post) { %>
                 <li><a href="<%- url_for(post.path) %>"><%= post.title %></a></li>
                 <% }) %>
             </div>
