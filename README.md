@@ -1,6 +1,17 @@
+---
+title: Pinghsu，A Hexo Theme
+date: 2019/02/02 12:46:25
+categories:
+- Tutorials
+tags:
+- Hexo
+- Theme
+- Pinghsu
+thumb: https://ws1.sinaimg.cn/large/c542ee77ly1fzs83ifsetj20jg0d015w.jpg
+---
 ## Pinghsu
 
-![pinghsu](https://user-images.githubusercontent.com/20245829/52165436-baad8b00-273b-11e9-8ae1-2b2eeaa7163d.png)
+![](https://ws1.sinaimg.cn/large/c542ee77ly1fzsfoy2cpkj21i40w4agz.jpg)
 
 本主题移植于[chakhsu](https://github.com/chakhsu)的Typecho主题[pinghsu](https://github.com/chakhsu/pinghsu)，将其基于Hexo进行重写。
 
@@ -86,6 +97,14 @@ $ git clone https://github.com/cccyb/hexo-theme-pinghsu.git themes/pinghsu
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
 theme: pinghsu
+```
+
+### Update 更新主题
+进入`Hexo`博客目录下的主题`themes`目录下的`pinghsu`目录：
+
+```bash
+$ cd your-hexo-site/themes/pinghsu
+$ git pull
 ```
 
 ## Setting 主题设置
@@ -456,12 +475,11 @@ social:
 ## Todos 未来
 
 - 搜索页
-- ~~集成评论系统(已集成gitalk)~~
-- 百度统计
 - 谷歌分析
-- 阅读次数
-- ~~不蒜子~~
-- 404页面
+- 文章阅读次数
+- 打赏功能
+- 代码压缩
+- 更完整的使用文档
 - 图片点击放大预览
 - ...more
 
