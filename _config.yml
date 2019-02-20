@@ -121,6 +121,9 @@ clickLove: true
 # 百度统计id，填写复 hm.js? 后面那串统计脚本 id
 baiduAnalytics:
 
+# 网站备案信息
+beian: 
+
 # valine评论系统
 valine:
   enable: false
