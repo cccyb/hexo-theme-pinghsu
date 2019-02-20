@@ -61,6 +61,14 @@ recentlyPosts:
   enable: true
   limit: 8
 
+# 底部最近评论设置
+# 只有开启了valine评论系统才能生效
+# enable：是否启用
+# limit：显示数量，建议设置不超过8条
+recentlyComments:
+  enable: true
+  limit: 8
+
 # ===========================================
 # Appearance Setting 外观设置
 # ===========================================
@@ -110,25 +118,15 @@ busuanzi: true
 # 网站点击红心效果
 clickLove: true
 
-# gitalk评论系统
-# 配置项具体含义见文档：https://github.com/gitalk/gitalk/blob/master/readme-cn.md
-gitalk:
-  enable: true
-  clientID: 
-  clientSecret: 
-  repo: 
-  owner: 
-  admin: # 如果有多个，一个一行
-    - 
-  id: location.pathname
-  perPage: 15
-  distractionFreeMode: false
-  pagerDirection: last
-  createIssueManually: true
-  enableHotKey: true
-
 # 百度统计id，填写复 hm.js? 后面那串统计脚本 id
-baiduAnalytics: 
+baiduAnalytics:
 
-# 网站备案信息
-beian: 
+# valine评论系统
+valine:
+  enable: false
+  appId: 
+  appKey: 
+  placeholder: Your commnet here. Be cool.
+  pageSize: 10
+  avatar: mp
+  visitor: true

@@ -13,7 +13,16 @@
 				<%= page.title %>
 			</div>
 			<div class="post-header-thumb-meta">
-				<time datetime="<%= page.date.unix() %>" itemprop="datePublished">Published on <%- page.date.format('MMM DD, YYYY') %><% if (page.categories.length != 0) { %> in <% } %></time><% page.categories.forEach(function(category, index) { %><a href="<%- url_for(category.path) %>"><%= category.name %><% if (index !== page.categories.length - 1) { %> / <% } %></a><% }); %>
+				<% if (theme.valine.enable && theme.valine.visitor) { %>
+				<span id="<%- url_for(page.path) %>" class="leancloud-visitors" data-flag-title="<%= page.title %>">
+					<span class="leancloud-visitors-count"></span> Views 
+				</span>
+				<% } %>
+				<time datetime="<%= page.date.unix() %>" itemprop="datePublished">Published on <%- page.date.format('MMM DD, YYYY') %><% if (page.categories.length != 0) { %> in <% } %></time>
+				<% page.categories.forEach(function(category, index) { %><a href="<%- url_for(category.path) %>"><%= category.name %><% if (index !== page.categories.length - 1) { %> / <% } %></a><% }); %>
+				<% if (theme.valine.enable) { %>
+				with <a id="page-title-comment" href="#vcomments"></a>
+				<% } %>
 			</div>
 			<div class="post-tags">
 				<% if (page.tags.length != 0) { %>
@@ -34,7 +43,16 @@
 				<%= page.title %>
 			</div>
 			<div class="post-header-thumb-meta">
-				<time datetime="<%= page.date.unix() %>" itemprop="datePublished">Published on <%= page.date.format('MMM DD, YYYY') %><% if (page.categories.length != 0) { %> in <% } %></time><% page.categories.forEach(function(category, index) { %><a href="<%- url_for(category.path) %>"><%= category.name %><% if (index !== page.categories.length - 1) { %> / <% } %></a><% }); %>
+				<% if (theme.valine.enable && theme.valine.visitor) { %>
+				<span id="<%- url_for(page.path) %>" class="leancloud-visitors" data-flag-title="<%= page.title %>">
+					<span class="leancloud-visitors-count">0</span> Views 
+				</span>
+				<% } %>
+				<time datetime="<%= page.date.unix() %>" itemprop="datePublished">Published on <%= page.date.format('MMM DD, YYYY') %><% if (page.categories.length != 0) { %> in <% } %></time>
+				<% page.categories.forEach(function(category, index) { %><a href="<%- url_for(category.path) %>"><%= category.name %><% if (index !== page.categories.length - 1) { %> / <% } %></a><% }); %>
+				<% if (theme.valine.enable) { %>
+				with <a id="page-title-comment" href="#vcomments"></a>
+				<% } %>
 			</div>
 			<div class="post-tags">
 				<% if (page.tags.length != 0) { %>
@@ -54,7 +72,15 @@
 			<%= page.title %>
 		</h1>
 		<div class="post-data">
+			<% if (theme.valine.enable && theme.valine.visitor) { %>
+			<span id="<%- url_for(page.path) %>" class="leancloud-visitors" data-flag-title="<%= page.title %>">
+				<span class="leancloud-visitors-count">0</span> Views 
+			</span>
+			<% } %>
             <time datetime="<%= page.date.unix() %>" itemprop="datePublished">Published on <%- page.date.format('MMM DD, YYYY') %><% if (page.categories.length != 0) { %> in <% } %></time><% page.categories.forEach(function(category, index) { %><a href="<%- url_for(category.path) %>"><%= category.name %><% if (index !== page.categories.length - 1) { %> / <% } %></a><% }); %>
+			<% if (theme.valine.enable) { %>
+			with <a id="page-title-comment" href="#vcomments"></a>
+			<% } %>
 		</div>
 	</div>
 	<div id="post-content" class="post-content" itemprop="articleBody">
@@ -120,9 +146,9 @@
 </div>
 <% } %>
 
-<% if (theme.gitalk.enable) { %>
+<% if (theme.valine.enable) { %>
 <div class="comment-container">
-	<div id="gitalk-container"></div>
+	<div id="vcomments"></div>
 </div>
 <% } %>
 

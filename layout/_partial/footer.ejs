@@ -42,6 +42,10 @@
                 <% }) %>
             </div>
             <% } %>
+            <% if (theme.valine.enable) { %>
+            <div class="meta-item meta-comments">
+            </div>
+            <% } %>
 		</div>
 	</div>
 </footer>
@@ -232,11 +236,19 @@ MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
 <% if (!theme.enablePjax && theme.clickLove) { %>
 <%- js('/js/love.js') %>
 <% } %>
-<% if (theme.gitalk.enable && is_post() && !theme.enablePjax) { %>
-    <%- partial('_partial/comment', { 
-        title: page.title, 
-    }) %>
-    <% } %>
+<% if (theme.valine.enable && !theme.enablePjax) { %>
+<script>
+    new Valine({
+        el: '#vcomments',
+        appId: '<%= theme.valine.appId %>',
+        appKey: '<%= theme.valine.appKey %>',
+        placeholder: '<%= theme.valine.placeholder %>' || 'Your commnet here. Be cool.',
+        avatar: '<%= theme.valine.avatar %>' || 'mp',
+        pageSize: <%= theme.valine.pageSize %> || 10,
+        visitor: <%= theme.valine.visitor %>,
+    })
+</script>
+<% } %>
 <% if (theme.enablePjax) { %>
 <script data-no-instant>
 InstantClick.on('change', function(isInitialLoad){
@@ -258,5 +270,41 @@ InstantClick.on('change', function(isInitialLoad){
 InstantClick.init('mousedown');
 </script>
 <% } %>
+<script>
+<% if (theme.valine.enable && is_post()) { %>
+// 获取文章评论数
+var query1 = new AV.Query('Comment');
+query1.equalTo('url', '<%- url_for(page.path) %>');
+query1.doesNotExist('pid');
+query1.count().then(function (count) {
+    document.getElementById('page-title-comment').innerText = count + ' comment';
+}, function (error) {
+    console.log(error.message);    
+}).catch(function (error) {
+    console.log(error.message);
+});
+<% } %>
+
+<% if (theme.valine.enable && theme.recentlyComments.enable) { %>
+// 获取最近评论
+var query2 = new AV.Query('Comment');
+query2.doesNotExist('pid');
+query2.descending('createdAt');
+query2.limit(<%= theme.recentlyComments.limit %>);
+query2.find().then(function (data) {
+    var _dom = '<h3 class="meta-title"><%= __('recentlyComments') %></h3>';
+    data.forEach(function(comment) {
+        const plainComment = comment.get('comment').replace(/<[^>]+>/gim, '');
+        const href = `${comment.get('url')}#${comment.get('objectId')}`;
+        _dom += `<li><a href="${href}">${comment.get('nick')} : ${plainComment}</a></li>`
+    })
+    document.getElementsByClassName('meta-comments')[0].innerHTML = _dom;
+}, function (error) {
+    console.log(error.message);    
+}).catch(function (error) {
+    console.log(error.message);
+});
+<% } %>
+</script>
 </body>
 </html>

@@ -25,12 +25,22 @@
 					<div class="item-label">
 						<div class="item-title"><a href="<%- url_for(post.path) %>"><%= post.title %></a></div>
 						<div class="item-meta clearfix">
-							<div class="item-meta-date" style="color: #313131; padding-top: 12px;"> <%= post.date.format('MMM DD, YYYY') %> </div>
+							<% if (theme.valine.enable && theme.valine.visitor) { %>
+							<div class="item-meta-date" style="color: #313131; padding-top: 10px; font-size: 13px;">
+								<span id="<%- url_for(post.path) %>" class="leancloud-visitors" data-flag-title="<%= post.title %>">
+									<span class="leancloud-visitors-count">0</span> Views 
+								</span>
+							</div>
+							<% } else { %>
+							<div class="item-meta-date" style="color: #313131; padding-top: 12px;">
+								<%= post.date.format('MMM DD, YYYY') %>
+							</div>
+							<% } %>
                             <div class="item-meta-ico <%= getPostIcon(post.icon) %>" style="background: url(/images/bg-ico.png) no-repeat;background-size: 40px auto;"></div>
                             <div class="item-meta-cat">
                                 <% post.categories.reverse().forEach(function(category) { %>
                                 <a href="<%- url_for(category.path) %>"><%= category.name %></a>
-                                <% }); %>
+								<% }); %>
                             </div>
 						</div>
 					</div>
@@ -48,6 +58,11 @@
 							<a href="<%- url_for(post.path) %>"><%= post.title %></a>
 						</div>
 						<div class="item-meta">
+							<% if (theme.valine.enable && theme.valine.visitor) { %>
+							<span id="<%- url_for(post.path) %>" class="leancloud-visitors" data-flag-title="<%= post.title %>">
+								<span class="leancloud-visitors-count">0</span> Views 
+							</span>
+							<% } %>
 							<time datetime="<%= post.date.unix() %>" itemprop="datePublished">Published on <%- post.date.format('MMM DD, YYYY') %><% if (post.categories.length != 0) { %> in <% } %></time><% post.categories.forEach(function(category, index) { %><a href="<%- url_for(category.path) %>"><%= category.name %><% if (index !== post.categories.length - 1) { %> / <% } %></a><% }); %>
 						</div>
 						<div class="item-meta-hr <%= getPostBgColor(theme.colorBgPosts, post.color, 'deepgrey') %>"></div>
