@@ -24,6 +24,11 @@
 				with <a id="page-title-comment" href="#vcomments"></a>
 				<% } %>
 			</div>
+			<div class="post-header-thumb-meta" style="font-size: 13px;">
+				<span class="post-count">本文字数：<%= wordcount(page.content) %> 字</span>
+				<span>|</span>
+				<span class="post-count">阅读时长 ≈ <%= min2read(page.content) %> min</span>
+			</div>
 			<div class="post-tags">
 				<% if (page.tags.length != 0) { %>
 				<% page.tags.forEach(function(tag){ %>
@@ -53,6 +58,11 @@
 				<% if (theme.valine.enable) { %>
 				with <a id="page-title-comment" href="#vcomments"></a>
 				<% } %>
+				<div class="post-header-thumb-meta" style="font-size: 13px;">
+					<span class="post-count">本文字数：<%= wordcount(page.content) %> 字</span>
+					<span>|</span>
+					<span class="post-count">阅读时长 ≈ <%= min2read(page.content) %> min</span>
+				</div>
 			</div>
 			<div class="post-tags">
 				<% if (page.tags.length != 0) { %>
@@ -81,6 +91,11 @@
 			<% if (theme.valine.enable) { %>
 			with <a id="page-title-comment" href="#vcomments"></a>
 			<% } %>
+			<div style="font-size: 13px;">
+				<span class="post-count">本文字数：<%= wordcount(page.content) %> 字</span>
+				<span>|</span>
+				<span class="post-count">阅读时长 ≈ <%= min2read(page.content) %> min</span>
+			</div>
 		</div>
 	</div>
 	<div id="post-content" class="post-content" itemprop="articleBody">
@@ -92,6 +107,32 @@
             <% } %>
         </p>
 		<%- page.content %>
+		<% if (theme.reward.enable) { %>
+		<div style="text-align: center; margin: 20px 0;">
+			<p><%= theme.reward.text %></p>
+			<button id="reward-button" disable="enable" onclick='var qr=document.getElementById("QR");"none"===qr.style.display?qr.style.display="block":qr.style.display="none"'><span>打赏</span></button>
+			<div id="QR" style="display: none;">
+				<div id="wechat" style="display: inline-block;">
+					<img src="<%= theme.reward.wechat %>" alt="微信支付" id="wechat-qr">
+					<p>微信支付</p>
+				</div>
+				<div id="alipay" style="display: inline-block;">
+					<img src="<%= theme.reward.alipay %>" alt="支付宝" id="alipay-qr">
+					<p>支付宝</p>
+				</div>
+			</div>
+		</div>
+		<% } %>
+		<% if (theme.music.enable) { %>
+		<meting-js
+			id="<%= theme.music.id %>"
+			server="<%= theme.music.server %>"
+			type="<%= theme.music.type %>"
+			auto="<%= theme.music.auto %>"
+			autoplay="<%= theme.music.autoplay %>"
+			>
+		</meting-js>
+		<% } %>
 		<p class="post-info">
 			本文由 <a href="<%= config.url %>"><%= config.author %></a> 创作，采用 <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="external nofollow">知识共享署名4.0</a> 国际许可协议进行许可<br>本站文章除注明转载/出处外，均为本站原创或翻译，转载前请务必署名<br>最后编辑时间为: <%= page.updated.format('MMM DD, YYYY hh:mm a') %>
 		</p>
