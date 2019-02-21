@@ -125,11 +125,31 @@ baiduAnalytics:
 beian: 
 
 # valine评论系统
+# 配置详情参考：https://valine.js.org/configuration.html
 valine:
-  enable: false
-  appId: 
-  appKey: 
-  placeholder: Your commnet here. Be cool.
-  pageSize: 10
-  avatar: mp
-  visitor: true
+  enable: false # 是否启用
+  appId: # 应用AppID
+  appKey: # 应用AppKey
+  placeholder: Your commnet here. Be cool. # 输入框默认显示文本
+  pageSize: 10 # 每页评论数量
+  avatar: mp # 头像类型
+  visitor: true # 文章阅读量统计
+
+# 打赏配置
+# 二维码图片放置在主题目录下的/source/imagse/
+# example：/images/wechat.jpg
+reward:
+  enable: false # 是否启用
+  text: 如果我的文章对你有很大帮助，那么不妨 # 打赏文案
+  wechat: /images/wechat.jpg # 微信支付二维码地址
+  alipay: /images/alipay.jpg # 支付宝二维码地址
+
+# 文章页音乐播放器设置
+# 配置详情参考：https://github.com/metowolf/MetingJS
+music:
+  enable: false # 是否启用
+  id: 1303019637 # song id / playlist id / album id / search keyword
+  server: netease # music platform: netease, tencent, kugou, xiami, baidu
+  type: song # song, playlist, album, search, artist
+  auto: # music link, support: netease, tencent, xiami
+  autoplay: false # 是否自动播放
