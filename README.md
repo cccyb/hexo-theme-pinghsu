@@ -168,17 +168,16 @@ highlight:
 ```
 
 ## 文档
-- 主题配置文档见：[主题配置](https://github.com/cccyb/hexo-theme-pinghsu/wiki/%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE)
-- 第三方服务文档见：[第三方服务](https://github.com/cccyb/hexo-theme-pinghsu/wiki/%E7%AC%AC%E4%B8%89%E6%96%B9%E6%9C%8D%E5%8A%A1)
+详细文档见：[文档 | Doc](https://github.com/cccyb/hexo-theme-pinghsu/wiki)
  
-## Thanks 感谢
+## 感谢
 
 再次感谢原作者[chakhsu](https://github.com/chakhsu)创作出这么精美的主题 [pinghsu](https://github.com/chakhsu/pinghsu) 。
 
-## Contributing 贡献
+## 贡献
 
 欢迎各种形式的贡献，包括但不限于优化，添加功能，文档 & 代码的改进，问题和 bugs 的报告。
 
-## License 许可证
+## 许可证
 
 [MIT](https://opensource.org/licenses/MIT)

@@ -282,6 +282,65 @@ social:
   ... 
 ```
 
+###  打赏功能设置
+
+主题支持在文章页对文章进行打赏，编辑**主题配置文件**：
+
+```yaml
+reward:
+  enable: true # 是否启用
+  text: 如果我的文章对你有很大帮助，那么不妨 # 打赏文案
+  wechat: /images/wechat.jpg # 微信支付二维码地址
+  alipay: /images/alipay.jpg # 支付宝二维码地址
+```
+
+其中二维码图片需要放置在主题目录下的`/source/images/`。
+
+### 字数统计功能设置
+
+主题支持显示文章字数统计 & 文章阅读时间 & 全站字数统计功能，需要手动安装`hexo-wordcount`插件进行启用，在博客目录下执行以下命令：
+
+```bash
+npm i hexo-wordcount --save
+```
+
+### 音乐播放器设置
+
+主题支持在文章页底部添加音乐播放器，编辑**主题配置文件**，添加以下配置以启用这一功能：
+
+```yaml
+music:
+  enable: true # 是否启用
+  id:  # song id / playlist id / album id / search keyword
+  server:  # music platform: netease, tencent, kugou, xiami, baidu
+  type:  # song, playlist, album, search, artist
+  auto: # music link, support: netease, tencent, xiami
+  autoplay: false # 是否自动播放
+```
+
+- `id`：歌曲id，歌单id，专辑id，搜索关键词
+
+- `server`：音乐平台，支持
+
+  - `netease`：网易云音乐
+  - `tencent`：QQ音乐
+  - `kugou`：酷狗音乐
+  - `xiami`：虾米音乐
+  - `baidu`：百度音乐
+
+- `type`：音乐播放类型，对应`id`
+
+  - `song`：单曲
+  - `playlist`：歌单
+  - `album`：专辑
+  - `search`：搜索
+  - `artist`：未知
+
+- `auto` ：音乐链接，支持网易云音乐，QQ音乐，虾米音乐
+- `autoplay`：自动播放
+
+更详细配置项介绍可参考：[https://github.com/metowolf/MetingJS](https://github.com/metowolf/MetingJS)
+
 ### 首页分页设置
 
 ```yml
