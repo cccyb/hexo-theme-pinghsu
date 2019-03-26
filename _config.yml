@@ -148,8 +148,8 @@ reward:
 # 配置详情参考：https://github.com/metowolf/MetingJS
 music:
   enable: false # 是否启用
-  id: 1303019637 # song id / playlist id / album id / search keyword
-  server: netease # music platform: netease, tencent, kugou, xiami, baidu
-  type: song # song, playlist, album, search, artist
+  id: # song id / playlist id / album id / search keyword
+  server: # music platform: netease, tencent, kugou, xiami, baidu
+  type: # song, playlist, album, search, artist
   auto: # music link, support: netease, tencent, xiami
   autoplay: false # 是否自动播放
