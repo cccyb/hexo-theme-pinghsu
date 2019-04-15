@@ -1,9 +1,9 @@
 menu:
-  categories: 分类
-  tags: 标签
-  archives: 归档
-  links: 友情链接
-  about: 关于我
+  categories: Categories #分类
+  tags: Tags #标签
+  archives: Archives #归档
+  links: Links #友情链接
+  about: About
 
 recentlyPosts: 最近文章
 
@@ -29,6 +29,6 @@ archive:
 views:
   text: 本站总访问量
   unit: 次
-vistors: 
+vistors:
   text: 本站访客数
   unit: 人次

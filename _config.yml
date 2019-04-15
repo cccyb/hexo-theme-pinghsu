@@ -4,17 +4,17 @@
 
 # 网站基础设置
 # 图片需要放置在 themes/pinghsu/source/imagse 下
-headerLogoUrl: # 头部右上角logo图片地址，留空则取网站标题 
+headerLogoUrl: # 头部右上角logo图片地址，留空则取网站标题
 footerLogoUrl: # 底部左下角logo图片地址，留空则取网站标题
 favicon: /images/favicon.png # favicon地址，留空则不设favicon
 iosicon: /images/apple-touch-icon.png # apple touch icon 地址，留空则不设 apple touch icon
-since: 2016 # 站点起始时间
+since: 2019 # 站点起始时间
 
 # Menu Setting 菜单设置
 menu:
-  categories: /categories
-  tags: /tags
+  # categories: /categories
   archives: /archives
+  tags: /tags
   links: /links
   about: /about
 
@@ -24,8 +24,8 @@ archive: year
 
 # Social Setting 社交设置
 social:
-  知乎: 
-  Github: 
+  知乎:
+  Github: https://github.com/xmyl
 
 # ===========================================
 # Function Setting 功能设置
@@ -37,7 +37,7 @@ dnsPrefetch: true
 
 # 自定义CDN加速地址
 # 若设置，且启用DNS预解析，则会被加速，可以填写图床地址进行图片加载加速，或者加速其他cdn
-cdnAdd: 
+cdnAdd:
 
 # 是否启用移动端点击延迟消除设置
 enableFastClick: true
@@ -50,7 +50,7 @@ enableMathjax: true
 # 仅在文章页中生效，文章是根据标签进行相关的
 # enable：是否启用
 # limit：显示文章数量，建议设置不超过6条
-relatedPosts: 
+relatedPosts:
   enable: true
   limit: 6
 
@@ -87,7 +87,7 @@ colorBgPosts: true
 showPostThumb: true
 
 # 默认缩略图
-defaultThumb: 
+defaultThumb:
 
 # 随机缩略图设置
 # 设为 0 则不使用主题自带的缩略图
@@ -108,12 +108,12 @@ highlight:
 # 底部彩色动态词语配置
 # 一个词语一行
 animateWords:
-  - Hexo
-  - Theme
-  - Pinghsu
+  - Photograph
+  - Travel
+  - Lovely
 
 # 不蒜子网站统计
-busuanzi: true
+busuanzi: false
 
 # 网站点击红心效果
 clickLove: true
@@ -122,7 +122,7 @@ clickLove: true
 baiduAnalytics:
 
 # 网站备案信息
-beian: 
+beian:
 
 # valine评论系统
 # 配置详情参考：https://valine.js.org/configuration.html
