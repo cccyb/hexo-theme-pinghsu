@@ -1,3 +1,12 @@
+# v1.4.2
+2019-09-20
+
+Fix: [issue4](https://github.com/cccyb/hexo-theme-pinghsu/issues/4)
+
+- 修复文章目录点击跳转无效的问题
+- 优化滚到到顶部的滚动平滑效果
+- 修复归档页分页失效的问题
+
 # v1.4.1
 2019-03-26
 

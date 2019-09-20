@@ -104,7 +104,7 @@ var postDirectoryBuild = function() {
                 }
                 count += levelArr[levelArr.length - 1];
                 lastNum = num;
-                elem.id = elem.id || (id + guid++);
+                elem.id = id + guid++;
                 titleId.push(elem.id);
             }
             if (count !== 0 && levelArr[0] === 1) levelArr[0] = 0;
